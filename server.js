@@ -4,10 +4,6 @@ const port = 3000;
 
 app.use(express.json());
 
-app.listen(port, () => {
-  console.log(`I'm all ears on port ${port}`);
-});
-
 let items = [];
 
 //Return a list of items
@@ -44,4 +40,8 @@ app.delete("/items/:id", (req, res) => {
 
   items.splice(index, 1);
   res.sendStatus(204);
+});
+
+app.listen(port, () => {
+  console.log(`I'm all ears on port ${port}`);
 });
